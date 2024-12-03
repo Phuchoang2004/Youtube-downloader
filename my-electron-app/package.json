@@ -1,0 +1,57 @@
+{
+  "name": "youtube_downloader",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "package-win": "electron-packager . youtube_downloader --platform=win32 --arch=x64 --out=dist --overwrite"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "app": "file:",
+    "backend0": "file:",
+    "cors": "^2.8.5",
+    "electron": "^31.4.0",
+    "express": "^4.19.2",
+    "ffmpeg-static": "^5.2.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-scripts": "5.0.1",
+    "web-vitals": "^2.1.4",
+    "youtube_downloader": "file:",
+    "yt-dlp-wrap": "^2.3.12"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "concurrently": "^8.2.2",
+    "electron-packager": "^17.1.2"
+  },
+  "build": {
+    "appId": "com.yourapp.id",
+    "productName": "YouTube Downloader",
+    "files": [
+      "app/build/**/*",
+      "sever.js",
+      "main.js",
+      "youtube_downloader/**/*"
+    ],
+    "directories": {
+      "output": "dist"
+    },
+    "asar": true,
+    "win": {
+      "target": "nsis"
+    },
+    "mac": {
+      "target": "dmg"
+    },
+    "linux": {
+      "target": "AppImage"
+    }
+  }
+}
